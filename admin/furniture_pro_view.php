@@ -49,7 +49,6 @@
                               <th>Image</th>
                               <th>Title</th>
                               <th>Category</th>
-                              <th>Size</th>
                               <th>Price (Pkr)</th>
                               <th>Detail</th>
                               <th>Status</th>
@@ -73,7 +72,7 @@
                                               $pid   = $pr_row['pid'];
                                               $title = $pr_row['title'];
                                               $category = $pr_row['category'];
-                                              $size = $pr_row['size'];
+                                             
                                               $price = $pr_row['price'];    
                                               $detail  = $pr_row['detail'];
                                               $image = $pr_row['image'];
@@ -99,8 +98,6 @@
                                  <td>
                                     <?php echo $category;?>
                                  </td>
-
-                                 <td><?php echo $size;?></td>
 
                                  <td><?php echo $price;?> </td>
                                  <td> 
