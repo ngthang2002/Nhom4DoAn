@@ -39,7 +39,7 @@ if (isset($_SESSION['email'])) {
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/1543986879.jpg" class="d-block w-100">
+      <img src="img/noithatanhthu.jpg" class="d-block w-100">
 
     </div>
     <div class="carousel-item">
@@ -138,23 +138,23 @@ if (isset($_SESSION['email'])) {
       <div class="col-md-4">
         <img src="img/bedset.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">Modern Bed set Designs</h4>
-          <p class="text-center">We deal with modern bedset design made from manufactured wood with solid wood veneers.Affordable price with high quality products.</p>
+          <h4 class="text-center">Giường ngủ hiện đại</h4>
+          <p class="text-center">Chúng tôi cung cấp các bộ giường ngủ hiện đại được làm từ gỗ công nghiệp kết hợp với lớp gỗ tự nhiên. Sản phẩm của chúng tôi có giá cả phải chăng nhưng chất lượng cao.</p>
         </div>
       </div>
       <div class="col-md-4">
         <img src="img/dining-set.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">Modern Dining Set</h4>
-          <p class="text-center">We deal with dining Table It oozes class and style and is very chic and modern in design. Dining table constructed from a durable solid wood.</p>
+          <h4 class="text-center">Cung cấp bộ bàn ăn hiện đại</h4>
+          <p class="text-center">Sản phẩm của chúng tôi mang đến sự sang trọng và phong cách, với thiết kế rất hiện đại và tinh tế. Bàn ăn được xây dựng từ gỗ chắc chắn và bền bỉ.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <img src="img/chairyellow.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">Modern Arm Chairs Design</h4>
-          <p class="text-center">We deal with All Modern Style Arm Chairs It oozes class and style and is very chic and modern in design, constructed from a durable solid wood.</p>
+          <h4 class="text-center">Thiết kế ghế tựa</h4>
+          <p class="text-center">Sản phẩm của chúng tôi mang đến sự sang trọng và phong cách, với thiết kế rất hiện đại và tinh tế. Các ghế tựa được xây dựng từ gỗ chắc chắn và bền bỉ.</p>
         </div>
       </div>
 
@@ -166,23 +166,23 @@ if (isset($_SESSION['email'])) {
       <div class="col-md-4">
         <img src="img/table.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">New Table Designs</h4>
-          <p class="text-center">We deal with All Modern Style tables It oozes class and style and is very chic and modern in design, constructed from a durable solid wood.</p>
+          <h4 class="text-center">Các mẫu bàn mới nhất</h4>
+          <p class="text-center">Sản phẩm của chúng tôi mang đến sự sang trọng và phong cách, với thiết kế rất tinh tế và hiện đại. Chúng được chế tạo từ gỗ chắc chắn và bền bỉ.</p>
         </div>
       </div>
       <div class="col-md-4">
         <img src="img/modern-contemp.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">Modern Sofa Designs</h4>
-          <p class="text-center">We deal with All Modern Style Sofas/Couches ,very chic and modern in design, constructed from a durable solid wood.</p>
+          <h4 class="text-center">Mẫu sofa/ghế sofa hiện đại</h4>
+          <p class="text-center">Sản phẩm của chúng tôi có thiết kế rất tinh tế và hiện đại, mang đến vẻ đẹp sang trọng và phong cách. Chúng được chế tạo từ gỗ chắc chắn và bền bỉ.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <img src="img/newcupboard.jpg" class="hover-effect" width="100%" alt="bedset">
         <div class="mt-3">
-          <h4 class="text-center">New Stylish Cupboard Designs</h4>
-          <p class="text-center">We deal with All Modern Style Cupboards, built-in cupboards are storage space that forms part of the design of the room.</p>
+          <h4 class="text-center">Tủ quần áo hiện đại, sang trọng</h4>
+          <p class="text-center">Tủ quần áo tích hợp được xem như một không gian lưu trữ là một phần của thiết kế của căn phòng. Chúng tạo điểm nhấn và mang lại sự tiện ích cho không gian lưu trữ.</p>
         </div>
       </div>
 
@@ -205,9 +205,9 @@ if (isset($_SESSION['email'])) {
             <i class="fal fa-phone-laptop fa-3x"></i>
             <div class="heading mt-2">
               <h4>Product</h4>
-              <h6 class="text-secandary">Choose your own product</h6>
+              <h6 class="text-secandary">Chọn một sản phẩm</h6>
             </div>
-            <p class="mt-2">Add product to cart & proceed to checkout and put your shipping address then checkout that. </p>
+            <p class="mt-2">Thêm sản phẩm vào giỏ hàng và tiến hành thanh toán, sau đó nhập địa chỉ giao hàng của bạn và hoàn tất thanh toán. </p>
 
           </div>
         </div>
@@ -222,9 +222,9 @@ if (isset($_SESSION['email'])) {
             <i class="fal fa-hand-holding-box fa-3x"></i>
             <div class="heading mt-2">
               <h4>Recieve</h4>
-              <h6 class="text-secandary">Recieve Your Product</h6>
+              <h6 class="text-secandary">Nhận sản phẩm của bạn</h6>
             </div>
-            <p class="mt-2">After chouckout from cart your product will be deliver at your door step within 7 working days</p>
+            <p class="mt-2">Sau khi mua hàng, sản phẩm của bạn sẽ được giao đến tận nhà.</p>
 
           </div>
         </div>
@@ -239,9 +239,9 @@ if (isset($_SESSION['email'])) {
             <i class="fal fa-wallet fa-3x"></i>
             <div class="heading mt-2">
               <h4>Cash</h4>
-              <h6 class="text-secandary">Cash on delivery</h6>
+              <h6 class="text-secandary">Thanh toán khi nhận hàng</h6>
             </div>
-            <p class="mt-2">On delivery of your product hold or recieve your products then pay cash on that moment.</p>
+            <p class="mt-2">Khi nhận sản phẩm của bạn, bạn có thể giữ hoặc nhận sản phẩm và sau đó thanh toán bằng tiền mặt tại thời điểm đó.</p>
 
           </div>
         </div>
