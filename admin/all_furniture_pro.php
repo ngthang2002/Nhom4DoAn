@@ -17,7 +17,7 @@ if (!isset($_SESSION['email'])) {
                     <i class="fad fa-box-alt fa-6x text-warning"></i>
                 </div>
                 <div class="col-md-11 text-left mt-4 ">
-                    <h1 class="ml-3 display-4 font-weight-normal">Pending Orders:</h1>
+                    <h1 class="ml-3 display-4 font-weight-normal">Tất cả đơn hàng:</h1>
                 </div>
             </div>
             <hr>
@@ -35,16 +35,14 @@ if (!isset($_SESSION['email'])) {
                             <th>Số lượng</th>
                             <th>Trạng thái</th>
                             <th>Ngày</th>
-                            <th>Chỉnh sửa</th>
 
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         <?php
-
                         $order_query = "SELECT order_id, customer_order.cust_id, email, product_id, quantily, customer_order.date, price, customer_order.status 
-                          FROM customer_order inner join furniture_product on customer_order.product_id = furniture_product.id 
-                          inner join customer on customer_order.cust_id = customer.cust_id WHERE customer_order.status = 'pending' ORDER BY order_id";
+                       FROM customer_order inner join furniture_product on customer_order.product_id = furniture_product.id 
+                       inner join customer on customer_order.cust_id = customer.cust_id ORDER BY order_id";
                         $run = mysqli_query($con, $order_query);
 
                         if (mysqli_num_rows($run) > 0) {
@@ -61,6 +59,7 @@ if (!isset($_SESSION['email'])) {
 
                                 $pr_query = "SELECT * FROM furniture_product fp INNER JOIN categories cat ON fp.category = cat.id WHERE fp.id = $order_pro_id ";
                                 $pr_run   = mysqli_query($con, $pr_query);
+
                                 if (mysqli_num_rows($pr_run) > 0) {
                                     while ($pr_row = mysqli_fetch_array($pr_run)) {
                                         $pid   = $pr_row['id'];
@@ -93,17 +92,23 @@ if (!isset($_SESSION['email'])) {
                                             </td>
 
                                             <td><?php echo $order_qty; ?></td>
+
                                             <td>
 
                                                 <?php
                                                 if ($order_status == 'pending') {
                                                     echo "<i class='fas fa-exclamation-circle text-warning'></i> $order_status";
+                                                } else if ($order_status == 'verified') {
+                                                    echo "<i class='fas fa-check-circle text-success'></i> $order_status";
+                                                } else {
+                                                    echo "<i class='fad fa-truck text-primary'></i> $order_status";
                                                 }
+
                                                 ?>
 
                                             </td>
                                             <td><?php echo $order_date; ?></td>
-                                            <td><a href="edit_furn_verify_pen.php?order_id=<?php echo $order_id; ?>"><button type="button" class="btn btn-primary btn-sm"> Edit</button></a></td>
+                                            <!-- <td><a href="edit_furn_verify_pen.php?order_id=<?php echo $order_id; ?>"><button type="button" class="btn btn-primary btn-sm"> Edit</button></a></td> -->
                                         </tr>
                         <?php
                                     }
@@ -131,4 +136,3 @@ if (!isset($_SESSION['email'])) {
 
     </div>
 </div>
-<?php include("include/footer.php"); ?>

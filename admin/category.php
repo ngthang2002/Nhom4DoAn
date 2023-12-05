@@ -6,8 +6,6 @@ if(!isset($_SESSION['email'])){
 
 ?>
 
-
-
 <div class="container-fluid mt-2">
      <div class="row">
            <div class="col-md-3 col-lg-3">
@@ -30,7 +28,7 @@ if(!isset($_SESSION['email'])){
                     <i class="fad fa-th-list fa-6x text-primary"></i>
                   </div>
                   <div class="col-md-11 text-left mt-4">
-                  <h1 class="ml-5 display-4 font-weight-normal">Thể loại</h1>
+                  <h1 class="ml-5 display-4 font-weight-normal">Danh Mục</h1>
                   </div>
                 </div>
               <hr>
@@ -49,14 +47,14 @@ if(!isset($_SESSION['email'])){
                    <div class="col-lg-8">
                      <div class="row">
                        <div class="col-lg-6">
-                        <input type="text" name="category" class="form-control" placeholder="Add Category">
+                        <input type="text" name="category" class="form-control" placeholder="Thêm Danh mục">
                        </div>
 
                       
                      </div>
                    </div>
                     <div class="col-lg-4">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Add cat" name="category">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Thêm" >
                        </div><br/>
                        
                        </div>
@@ -91,8 +89,8 @@ if(!isset($_SESSION['email'])){
                     
                     <th>ID</th>
                     
-                    <th>Categories</th>
-                    <th class="text-center">Action</th>
+                    <th>Tên</th>
+                    <th class="text-center"></th>
                     
                   </tr>
                 </thead>
@@ -139,12 +137,5 @@ if(!isset($_SESSION['email'])){
         </div>
         
      </div>
-         <!---edit category query-->
-      
-            <!-- Modal -->
-
+  
       </div>
-      <?php 
-
- require_once('include/footer.php');
-?>

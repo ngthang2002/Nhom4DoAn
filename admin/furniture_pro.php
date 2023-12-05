@@ -24,7 +24,7 @@ if (isset($_SESSION['email'])) {
         <?php
         if (isset($_POST['submit'])) {
           $title      = $_POST['title'];
-         
+
           $price      = $_POST['price'];
           $date       = date("d-m-Y");
           $status     = $_POST['status'];
@@ -36,7 +36,6 @@ if (isset($_SESSION['email'])) {
           if (!empty($title) or !empty($price) or !empty($status) or !empty($category) or !empty($detail) or !empty($image)) {
             $query = "INSERT INTO furniture_product(`title`, `category`,  `price`, `detail`, `image`, `date`, `status`)
                       VALUES('$title',$category,$price,'$detail','$image','$date','$status')";
-
             if (mysqli_query($con, $query)) {
               $path = "img/" . $image;
 
@@ -63,8 +62,8 @@ if (isset($_SESSION['email'])) {
           <!-- Grid column -->
           <div class="col-md-12">
             <div class="form-group">
-              <label for="furniture">Product Title:</label>
-              <input type="text" class="form-control" name="title" id="inputEmail4MD" placeholder="Title">
+              <label for="furniture">Tiêu đề sản phẩm:</label>
+              <input type="text" class="form-control" name="title" id="inputEmail4MD" placeholder="Tên">
             </div>
           </div>
 
@@ -72,7 +71,7 @@ if (isset($_SESSION['email'])) {
 
         <div class="row">
           <div class="col-md-3">
-            <label for="category">Category:</label>
+            <label for="category">Danh mục:</label>
             <select class="form-control" name="category">
               <?php
               $cat_query = "SELECT * FROM categories ORDER BY id ASC";
@@ -84,7 +83,7 @@ if (isset($_SESSION['email'])) {
                   echo "<option value='$cat_id'>$cat_name</option>";
                 }
               } else {
-                echo " <option> No Category </option>";
+                echo " <option> Không có Danh mục </option>";
               }
               ?>
 
@@ -92,20 +91,20 @@ if (isset($_SESSION['email'])) {
 
           </div>
           <!-- Grid column -->
-         
-          
+
+
           <div class="col-md-3">
             <div class="form-group">
-              <label for="size">Product Price:</label>
-              <input type="text" class="form-control" name="price" placeholder="Price: 25000">
+              <label for="size">Giá sản phẩm:</label>
+              <input type="text" class="form-control" name="price" placeholder="25000">
             </div>
           </div>
 
           <div class="col-md-3">
-            <label for="size">Product color:</label>
+            <label for="size">Trạng thái sản phẩm:</label>
             <select class="form-control" name="status">
-              <option value="1" selected>Publish</option>
-              <option value="2">Draft</option>
+              <option value="Publish" selected>Publish</option>
+              <option value="Draft">Draft</option>
             </select>
           </div>
 
@@ -121,7 +120,7 @@ if (isset($_SESSION['email'])) {
 
         <div class="row mt-3">
           <div class="col-md-6">
-            <span>Choose files</span>
+            <span>Chọn file:</span>
             <input type="file" name="upload" class="form-control-file border">
           </div>
 
@@ -130,7 +129,7 @@ if (isset($_SESSION['email'])) {
           </div>
         </div>
 
-        <input type="submit" name="submit" class=" mt-3 btn btn-primary btn-md" value="Submit">
+        <input type="submit" name="submit" class=" mt-3 btn btn-primary btn-md" value="Thêm">
 
       </form>
     </div>
@@ -144,6 +143,3 @@ if (isset($_SESSION['email'])) {
     });
   </script>
 </div>
-<?php
-require_once('include/footer.php');
-?>

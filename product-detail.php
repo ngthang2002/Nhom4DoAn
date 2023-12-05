@@ -1,7 +1,7 @@
 <?php include('include/header.php'); ?>
 
 <div class="jumbotron">
-  <h2 class="text-center mt-5">Product detail</h2>
+  <h2 class="text-center mt-5">Chi Tiết Sản Phẩm</h2>
 </div>
 
 <main>
@@ -24,12 +24,12 @@
         if (isset($_GET['product_id'])) {
           $p_id = $_GET['product_id'];
 
-          $pdetail_query = "SELECT * FROM furniture_product WHERE pid=$p_id";
+          $pdetail_query = "SELECT * FROM furniture_product WHERE id=$p_id";
           $pdetail_run   = mysqli_query($con, $pdetail_query);
 
           if (mysqli_num_rows($pdetail_run) > 0) {
             $pdetail_row = mysqli_fetch_array($pdetail_run);
-            $pid = $pdetail_row['pid'];
+            $pid = $pdetail_row['id'];
             $title = $pdetail_row['title'];
             $category = $pdetail_row['category'];
             $detail = $pdetail_row['detail'];
@@ -58,7 +58,7 @@
             }
             ?>
           </p>
-          <p><span class="mr-1"><strong>PKR <?php echo $price; ?></strong></span></p>
+          <p><span class="mr-1"><strong>đ. <?php echo $price; ?></strong></span></p>
           <p class="pt-1"><?php echo $detail; ?></p>
 
           <hr>
@@ -69,37 +69,17 @@
               $custid = $_SESSION['id'];
               if (isset($_POST['submit'])) {
                 $qty = $_POST['qty'];
-                $size = $_POST['size'];
+                // $size = $_POST['size'];
 
                 $sel_cart = "SELECT * FROM cart WHERE cust_id = $custid and product_id = $p_id ";
                 $run_cart    = mysqli_query($con, $sel_cart);
 
                 if (mysqli_num_rows($run_cart) == 0) {
-                  $cart_query = "INSERT INTO `cart`(`cust_id`, `product_id`,quantity,size) VALUES ($custid,$p_id,$qty,$size)";
+                  $cart_query = "INSERT INTO `cart`(`cust_id`, `product_id`,quantity) VALUES ($custid,$p_id,$qty)";
                   if (mysqli_query($con, $cart_query)) {
                     header("location:product-detail.php?product_id=$p_id");
                   }
                 }
-
-                //                    if(mysqli_num_rows($run_cart) > 0){
-                //                     while($row = mysqli_fetch_array($run_cart)){
-                //                      $db_cart_pid = $row['product_id'];
-                //                     
-                //                      if($p_id !== $db_cart_pid){
-                //                        $cart_query = "INSERT INTO `cart`(`cust_id`, `product_id`,quantity) VALUES ($custid,$p_id,$qty)";    
-                //                        if(mysqli_query($con,$cart_query)){
-                //                          header("location:product-detail.php?product_id=$p_id");
-                //                        }
-                //                      }
-                //            
-                //                      if($p_id==$db_cart_pid ){
-                //                       
-                //                            echo "<script> alert('⚠️ This product is already in your cart'); </script>";
-                //                              
-                //                                }
-                //                           
-                //                         }
-                //                     }
 
                 if (mysqli_num_rows($run_cart) > 0) {
                   while ($row = mysqli_fetch_array($run_cart)) {
@@ -118,20 +98,10 @@
 
             ?>
             <div class="form-group">
-              <label>Quantity</label>
+              <label>Số lượng</label>
               <input type="number" name="qty" placeholder="Quantity" value="1" class="form-control w-25">
             </div>
-            <div class="form-group">
-              <label for="sel1"> size</label>
-              <select class="form-control" name="size"id="sel1">
-                <option value="1">m</option>
-                <option value="2">l</option>
-                <option value="3">xl</option>
-                <option value="4">xxl</option>
-              </select>
-            </div>
-
-            <button type="submit" onclick="a()" name="submit" class="btn btn-light btn-md mt-3 mr-1 mb-2 hover-effect"><i class="fas fa-shopping-cart pr-2"></i> Add to cart</button>
+            <button type="submit" onclick="a()" name="submit" class="btn btn-light btn-md mt-3 mr-1 mb-2 hover-effect"><i class="fas fa-shopping-cart pr-2"></i> Thêm vào giỏ hàng</button>
 
           </form>
         </div>
@@ -144,7 +114,7 @@
     <!--Section: New products-->
     <section>
 
-      <h3 class="text-center pt-5 mb-0">Related Products </h3>
+      <h3 class="text-center pt-5 mb-0">Có liên quan </h3>
 
       <!-- Grid row -->
       <div class="row mt-5 mb-4">
@@ -156,7 +126,7 @@
 
         if (mysqli_num_rows($p_run) > 0) {
           while ($p_row = mysqli_fetch_array($p_run)) {
-            $pid      = $p_row['pid'];
+            $pid      = $p_row['id'];
             $ptitle  = $p_row['title'];
             $pcat    = $p_row['category'];
             $p_price = $p_row['price'];
@@ -168,17 +138,14 @@
               <img src="img/<?php echo $img1; ?>" class="hover-effect" width="100%" height="190px">
               <div class="text-center mt-3">
                 <h5 title="<?php echo $ptitle; ?>"><?php echo substr($ptitle, 0, 20); ?>...</h5>
-                <h6>Rs. <?php echo $p_price; ?></h6>
+                <h6>đ. <?php echo $p_price; ?></h6>
               </div>
 
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-12 text-center">
 
-                  <a href="product-detail.php?product_id=<?php echo $pid; ?>" type="submit" onclick="a()" class="btn btn-primary btn-sm hover-effect">
-                    <i class="far fa-shopping-cart"></i>
-                  </a>
                   <a href="product-detail.php?product_id=<?php echo $pid; ?>" class="btn btn-default btn-sm hover-effect text-dark">
-                    <i class="far fa-info-circle"></i> View Details
+                    <i class="far fa-info-circle"></i> Chi tiết
                   </a>
 
                 </div>
@@ -200,5 +167,3 @@
   </div>
 
 </main>
-
-<?php include('include/footer.php'); ?>

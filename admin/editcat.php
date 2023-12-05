@@ -16,17 +16,17 @@ if(isset($_POST['submit'])){
 
     $category = $_POST['catname'];
     if($category == $dbcat){
-        $error = "Category already Exist!";
+        $error = "Danh mục đã tồn tại!";
     }
     
     
     $query ="UPDATE categories SET category = '$category' WHERE id=$dbcat_id";
     if(mysqli_query($con,$query)){
-        $msg = "Catgory Updated Successfully!";
+        $msg = "Sửa danh mục thành công!";
      header("location:");
     }
     else{
-        $error="Not updated";
+        $error="Không cập nhật!";
     }
 }
 ?>
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
                    <i class="fad fa-couch text-primary" style="font-size:70px;"></i>
                </div>
                <div class="col-md-10 mt-1">
-                    <h1 style="font-size:50px;">Edit Furniture Category</h1>
+                    <h1 style="font-size:50px;">Sửa Danh Mục</h1>
                </div>
            </div>
            <hr>
@@ -52,15 +52,15 @@ if(isset($_POST['submit'])){
                   <form action="" method="post">
                     <div class="row">
                        <div class="col-md-3">
-                        <input type="text" name="cid" class="form-control" disabled placeholder="Edit id" value="<?php echo $dbcat_id;?>">
+                        <input type="text" name="cid" class="form-control" disabled placeholder="ID" value="<?php echo $dbcat_id;?>">
                        </div>
                        <div class="col-md-9">
-                           <input type="text" name="catname" class="form-control" placeholder="Edit Category" value="<?php echo $dbcat;?>">
+                           <input type="text" name="catname" class="form-control" placeholder="Danh Mục" value="<?php echo $dbcat;?>">
                        </div>
                            </div>
                       <div class="row mt-3">
                           <div class="col-md-12">
-                               <input type="submit" name="submit" class="btn btn-primary btn-block" value="Edit Category">
+                               <input type="submit" name="submit" class="btn btn-primary btn-block" value="Lưu">
                           </div>
                       </div>
                  

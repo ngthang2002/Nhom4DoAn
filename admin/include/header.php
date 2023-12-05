@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 session_start();
 require_once('include/dbcon.php');
@@ -15,7 +15,7 @@ require_once('include/dbcon.php');
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Furniture Shop Management System | Admin - Dashboard</title>
+  <title>Admin - Dashboard</title>
 
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Custom styles for this template-->
@@ -25,39 +25,37 @@ require_once('include/dbcon.php');
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  
+
 </head>
 
 <body id="page-top">
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="index.php">Admin</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="../index.php" target="_blank"><i class="fas fa-store"></i> Furniture Shop </a>
-      </li>
-    
-      
-       <li class="nav-item">
-        <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-      </li>   
-       <?php 
-         if(isset($_SESSION['email']) )
-         {
-             $session_email = $_SESSION['email'];
-             $query ="SELECT image from admin WHERE email='$session_email'";
-             $run = mysqli_query($con,$query);
-             $row = mysqli_fetch_array($run);
-             $image = $row['image'];
-            }
-         ?>
-       <li class="nav-item">
-       
-      </li>
-      
-    </ul>
-  </div>  
-</nav>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.php">Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.php" target="_blank"><i class="fas fa-store"></i> AnhThuShop </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+        </li>
+        <?php
+        if (isset($_SESSION['email'])) {
+          $session_email = $_SESSION['email'];
+          $query = "SELECT image from admin WHERE email='$session_email'";
+          $run = mysqli_query($con, $query);
+          $row = mysqli_fetch_array($run);
+        }
+        ?>
+        <li class="nav-item">
+
+        </li>
+
+      </ul>
+    </div>
+  </nav>

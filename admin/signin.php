@@ -55,7 +55,7 @@
             header('location: index.php'); 
 
       }else{
-        $error = "Invalid Email or Password";
+        $error = "Email hoặc Password không hợp lệ!";
       }
     }
 ?>
@@ -69,8 +69,7 @@
         <div class="container mt-5">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h1 class="login-heading text-center mb-2">Welcome on </h1>
-              <h3 class="login-heading text-center mb-4">Furniture Shop Management System</h3>
+              <h1 class="login-heading text-center mb-2">Đăng nhập Admin </h1>
               <form method="post">
               <?php
               if(isset($error)){
@@ -85,8 +84,8 @@
                       }
                       ?>
                 <div class="form-group">
-                 <label for="email">Email address</label>
-                 <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+                 <label for="email">Email</label>
+                 <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -95,9 +94,8 @@
                 </div>
 
                 
-                <input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="Sign in" name="signin">
+                <input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="Đăng Nhập" name="signin">
                 <div class="text-center">
-                  <a class="small" href="#">Forgot password?</a></div>
 
               </form>
             </div>

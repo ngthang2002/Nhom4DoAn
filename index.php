@@ -83,16 +83,16 @@ if (isset($_SESSION['email'])) {
     <div class="row mt-4">
 
       <?php
-      $p_query = "SELECT * FROM furniture_product ORDER BY pid DESC LIMIT 4";
+      $p_query = "SELECT * FROM furniture_product ORDER BY id DESC LIMIT 4";
       $p_run   = mysqli_query($con, $p_query);
 
       if (mysqli_num_rows($p_run) > 0) {
         while ($p_row = mysqli_fetch_array($p_run)) {
-          $pid      = $p_row['pid'];
+          $pid      = $p_row['id'];
           $ptitle  = $p_row['title'];
           $pcat    = $p_row['category'];
           $p_price = $p_row['price'];
-        
+
           $img1    = $p_row['image'];
       ?>
 
@@ -100,15 +100,12 @@ if (isset($_SESSION['email'])) {
             <img src="img/<?php echo $img1; ?>" class="hover-effect" width="100%" height="190px">
             <div class="text-center mt-3">
               <h5 title="<?php echo $ptitle; ?>"><?php echo substr($ptitle, 0, 20); ?>...</h5>
-              <h6>Rs. <?php echo $p_price; ?></h6>
+              <h6>đ.<?php echo $p_price; ?></h6>
             </div>
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-12 text-center">
 
-                <a href="index.php?cart_id=<?php echo $pid; ?>" type="submit" onclick="a()" class="btn btn-primary btn-sm hover-effect">
-                  <i class="far fa-shopping-cart"></i>
-                </a>
                 <a href="product-detail.php?product_id=<?php echo $pid; ?>" class="btn btn-default btn-sm hover-effect text-dark">
                   <i class="far fa-info-circle"></i> Chi tiết
                 </a>
@@ -255,5 +252,3 @@ if (isset($_SESSION['email'])) {
   </div>
 </section>
 <!---end How to shop-->
-
-<?php include('include/footer.php'); ?>
